@@ -229,9 +229,205 @@
     </div>
 
     <script>
-        // Les données (categories et database) restent les mêmes
-        // Je vais les ajouter dans la prochaine partie
-    </script>
+    const categories = {
+        "Douleurs": [
+            "maux de tête",
+            "douleurs musculaires",
+            "douleurs articulaires",
+            "douleurs menstruelles",
+            "mal de dos",
+            "sciatique",
+            "tendinite",
+            "arthrose",
+            "courbatures",
+            "névralgies"
+        ],
+        "Stress & Sommeil": [
+            "stress",
+            "anxiété",
+            "troubles du sommeil",
+            "fatigue",
+            "burn-out",
+            "dépression légère",
+            "insomnie",
+            "surmenage",
+            "nervosité",
+            "angoisses"
+        ],
+        "Respiratoire": [
+            "rhume",
+            "sinusite",
+            "bronchite",
+            "toux sèche",
+            "toux grasse",
+            "nez bouché",
+            "angine",
+            "asthme léger",
+            "rhinite",
+            "laryngite"
+        ],
+        "Digestion": [
+            "nausées",
+            "digestion difficile",
+            "ballonnements",
+            "constipation",
+            "diarrhée",
+            "crampes intestinales",
+            "brûlures d'estomac",
+            "colites",
+            "spasmes",
+            "reflux gastrique"
+        ],
+        "Peau & Beauté": [
+            "acné",
+            "eczéma",
+            "psoriasis",
+            "cicatrices",
+            "vergetures",
+            "hématomes",
+            "couperose",
+            "rides",
+            "mycoses cutanées",
+            "démangeaisons"
+        ],
+        "Circulation & Immunité": [
+            "jambes lourdes",
+            "varices",
+            "hémorroïdes",
+            "défenses immunitaires",
+            "infections virales",
+            "lymphe",
+            "cellulite",
+            "œdème",
+            "phlébite",
+            "hypertension"
+        ]
+    };
+
+    const database = {
+        "maux de tête": [
+            {
+                nom: "Menthe poivrée",
+                utilisation: "1-2 gouttes sur les tempes en massage circulaire",
+                precautions: "Ne pas utiliser chez les enfants de moins de 6 ans et les femmes enceintes"
+            },
+            {
+                nom: "Lavande vraie",
+                utilisation: "2-3 gouttes sur les tempes et la nuque en massage",
+                precautions: "Peut provoquer une légère somnolence"
+            },
+            {
+                nom: "Basilic tropical",
+                utilisation: "1 goutte mélangée à une huile végétale sur les tempes",
+                precautions: "Déconseillé aux femmes enceintes et aux enfants"
+            }
+        ],
+        "stress": [
+            {
+                nom: "Lavande fine",
+                utilisation: "3 gouttes en diffusion ou 1 goutte sur le plexus solaire",
+                precautions: "Aucune contre-indication majeure"
+            },
+            {
+                nom: "Orange douce",
+                utilisation: "4-5 gouttes en diffusion ou 2 gouttes dans une base neutre",
+                precautions: "Photosensibilisante, éviter l'exposition solaire"
+            },
+            {
+                nom: "Petit grain bigarade",
+                utilisation: "2 gouttes sur le plexus solaire ou 3 gouttes en diffusion",
+                precautions: "Éviter pendant la grossesse"
+            }
+        ],
+        // [Ajoutez ici les autres symptômes de la base de données]
+    };
+
+    // Éléments DOM
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownContent = document.getElementById('dropdownContent');
+    const selectedSymptomText = document.getElementById('selectedSymptom');
+    const resultsContainer = document.getElementById('results');
+
+    // Générer le contenu du dropdown
+    function generateDropdownContent() {
+        dropdownContent.innerHTML = '';
+        Object.entries(categories).forEach(([category, symptoms]) => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.innerHTML = `
+                <div class="category-header">${category}</div>
+                ${symptoms.map(symptom => `
+                    <button class="symptom-option" data-symptom="${symptom}">
+                        ${symptom}
+                    </button>
+                `).join('')}
+            `;
+            dropdownContent.appendChild(categoryDiv);
+        });
+
+        // Ajouter les écouteurs d'événements pour les options
+        document.querySelectorAll('.symptom-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const symptom = option.dataset.symptom;
+                selectSymptom(symptom);
+            });
+        });
+    }
+
+    // Sélectionner un symptôme
+    function selectSymptom(symptom) {
+        selectedSymptomText.textContent = symptom;
+        dropdownContent.classList.remove('show');
+        displayResults(symptom);
+    }
+
+    // Afficher les résultats
+    function displayResults(symptom) {
+        const huiles = database[symptom];
+        if (!huiles) {
+            resultsContainer.innerHTML = `
+                <div class="placeholder-text">
+                    Données non disponibles pour ce symptôme
+                </div>
+            `;
+            return;
+        }
+
+        resultsContainer.innerHTML = `
+            <div class="fade-in">
+                ${huiles.map(huile => `
+                    <div class="result-card">
+                        <h3 class="oil-name">${huile.nom}</h3>
+                        <div class="usage-section">
+                            <div class="usage-label">Utilisation</div>
+                            <div>${huile.utilisation}</div>
+                        </div>
+                        <div class="precaution-section">
+                            <div class="usage-label">⚠️ Précautions</div>
+                            <div>${huile.precautions}</div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    // Gestionnaire d'événements pour le dropdown
+    dropdownButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdownContent.classList.contains('show');
+        if (!isOpen) {
+            generateDropdownContent();
+        }
+        dropdownContent.classList.toggle('show');
+    });
+
+    // Fermer le dropdown en cliquant à l'extérieur
+    document.addEventListener('click', (e) => {
+        if (!dropdownButton.contains(e.target) && !dropdownContent.contains(e.target)) {
+            dropdownContent.classList.remove('show');
+        }
+    });
+</script>
 </body>
 </html>
 <script>
