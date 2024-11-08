@@ -306,6 +306,43 @@ const database = {
             precautions: "Déconseillé aux femmes enceintes et aux enfants"
         }
     ],
+
+    "douleurs musculaires": [
+        {
+            nom: "Gaulthérie couchée",
+            utilisation: "2-3 gouttes diluées en massage local",
+            precautions: "Contre-indiquée si traitement anticoagulant ou allergie aux salicylés"
+        },
+        {
+            nom: "Eucalyptus citronné",
+            utilisation: "3 gouttes diluées en massage",
+            precautions: "Faire un test cutané préalable"
+        },
+        {
+            nom: "Romarin à camphre",
+            utilisation: "2 gouttes diluées en massage",
+            precautions: "Éviter le soir car stimulante"
+        }
+    ],
+
+    "douleurs articulaires": [
+        {
+            nom: "Gaulthérie",
+            utilisation: "3 gouttes diluées dans une huile végétale en massage",
+            precautions: "Contre-indiquée si allergie aux salicylés"
+        },
+        {
+            nom: "Eucalyptus citronné",
+            utilisation: "2 gouttes diluées en massage local",
+            precautions: "Toujours diluer avant application"
+        },
+        {
+            nom: "Genévrier",
+            utilisation: "2 gouttes mélangées à une huile végétale",
+            precautions: "Déconseillé aux personnes avec problèmes rénaux"
+        }
+    ],
+
     "stress": [
         {
             nom: "Lavande fine",
@@ -323,7 +360,257 @@ const database = {
             precautions: "Éviter pendant la grossesse"
         }
     ],
-    // [Continuez à ajouter toutes les données du précédent message]
+
+    "anxiété": [
+        {
+            nom: "Marjolaine à coquilles",
+            utilisation: "2 gouttes en diffusion ou 1 goutte sur le plexus",
+            precautions: "Peut provoquer une somnolence"
+        },
+        {
+            nom: "Bergamote",
+            utilisation: "3 gouttes en diffusion",
+            precautions: "Photosensibilisante, ne pas appliquer avant exposition solaire"
+        },
+        {
+            nom: "Lavande vraie",
+            utilisation: "2 gouttes sur le plexus solaire",
+            precautions: "Peut avoir un effet sédatif léger"
+        }
+    ],
+
+    "troubles du sommeil": [
+        {
+            nom: "Lavande vraie",
+            utilisation: "2-3 gouttes sur l'oreiller ou en diffusion",
+            precautions: "Peut augmenter la somnolence"
+        },
+        {
+            nom: "Camomille romaine",
+            utilisation: "2 gouttes en diffusion avant le coucher",
+            precautions: "Prix élevé, peut être remplacée par la lavande"
+        },
+        {
+            nom: "Marjolaine à coquilles",
+            utilisation: "2 gouttes en diffusion le soir",
+            precautions: "Ne pas utiliser si on doit conduire"
+        }
+    ],
+
+    "rhume": [
+        {
+            nom: "Ravintsara",
+            utilisation: "2 gouttes sur le thorax + 1 goutte dans du miel",
+            precautions: "Ne pas utiliser chez les enfants de moins de 3 ans"
+        },
+        {
+            nom: "Eucalyptus radié",
+            utilisation: "2 gouttes en inhalation ou sur un mouchoir",
+            precautions: "Éviter chez les asthmatiques"
+        },
+        {
+            nom: "Tea tree",
+            utilisation: "1 goutte dans du miel 3x par jour",
+            precautions: "Ne pas dépasser les doses indiquées"
+        }
+    ],
+
+    "sinusite": [
+        {
+            nom: "Eucalyptus globulus",
+            utilisation: "1-2 gouttes en inhalation sèche",
+            precautions: "Déconseillé aux asthmatiques"
+        },
+        {
+            nom: "Menthe poivrée",
+            utilisation: "1 goutte diluée autour des sinus",
+            precautions: "Ne pas utiliser chez les enfants"
+        },
+        {
+            nom: "Ravintsara",
+            utilisation: "2 gouttes diluées en massage local",
+            precautions: "Éviter pendant la grossesse"
+        }
+    ],
+
+    "bronchite": [
+        {
+            nom: "Eucalyptus radié",
+            utilisation: "2 gouttes diluées sur le thorax",
+            precautions: "Ne pas utiliser chez les jeunes enfants"
+        },
+        {
+            nom: "Thym à thujanol",
+            utilisation: "1 goutte dans du miel 3x par jour",
+            precautions: "Ne pas dépasser 5 jours d'utilisation"
+        },
+        {
+            nom: "Ravintsara",
+            utilisation: "2 gouttes diluées sur le thorax",
+            precautions: "Éviter chez la femme enceinte"
+        }
+    ],
+    "toux sèche": [
+        {
+            nom: "Cyprès",
+            utilisation: "2 gouttes diluées sur le thorax",
+            precautions: "Ne pas utiliser en cas de mastose"
+        },
+        {
+            nom: "Lavande vraie",
+            utilisation: "2 gouttes en massage sur le thorax",
+            precautions: "Aucune contre-indication majeure"
+        },
+        {
+            nom: "Marjolaine à coquilles",
+            utilisation: "1-2 gouttes diluées sur le thorax",
+            precautions: "Peut avoir un effet sédatif"
+        }
+    ],
+
+    "toux grasse": [
+        {
+            nom: "Eucalyptus globulus",
+            utilisation: "2 gouttes diluées en massage sur le thorax",
+            precautions: "Déconseillé aux asthmatiques"
+        },
+        {
+            nom: "Pin sylvestre",
+            utilisation: "2 gouttes en inhalation ou diluées en massage",
+            precautions: "Ne pas utiliser chez les enfants"
+        },
+        {
+            nom: "Thym à linalol",
+            utilisation: "1 goutte dans du miel 2-3 fois par jour",
+            precautions: "Respecter les doses indiquées"
+        }
+    ],
+
+    "nausées": [
+        {
+            nom: "Gingembre",
+            utilisation: "1 goutte dans du miel ou sur un comprimé neutre",
+            precautions: "Déconseillé en cas de traitement anticoagulant"
+        },
+        {
+            nom: "Menthe poivrée",
+            utilisation: "1 goutte à inhaler sur un mouchoir",
+            precautions: "Éviter chez les femmes enceintes et enfants"
+        },
+        {
+            nom: "Citron",
+            utilisation: "1 goutte dans une cuillère de miel",
+            precautions: "Photosensibilisant"
+        }
+    ],
+
+    "digestion difficile": [
+        {
+            nom: "Basilic tropical",
+            utilisation: "1 goutte dans une cuillère d'huile d'olive après le repas",
+            precautions: "Ne pas utiliser chez la femme enceinte"
+        },
+        {
+            nom: "Menthe poivrée",
+            utilisation: "1 goutte dans du miel après le repas",
+            precautions: "Éviter chez les enfants de moins de 6 ans"
+        },
+        {
+            nom: "Gingembre",
+            utilisation: "1 goutte dans de l'huile d'olive",
+            precautions: "Éviter si traitement anticoagulant"
+        }
+    ],
+
+    "ballonnements": [
+        {
+            nom: "Basilic tropical",
+            utilisation: "1 goutte dans de l'huile d'olive après le repas",
+            precautions: "Éviter pendant la grossesse"
+        },
+        {
+            nom: "Estragon",
+            utilisation: "1 goutte dans du miel après le repas",
+            precautions: "Ne pas utiliser sur le long terme"
+        },
+        {
+            nom: "Carvi",
+            utilisation: "1 goutte dans du miel après manger",
+            precautions: "Usage ponctuel uniquement"
+        }
+    ],
+
+    "acné": [
+        {
+            nom: "Tea tree",
+            utilisation: "1 goutte diluée dans votre crème, application locale",
+            precautions: "Ne pas utiliser pur sur la peau"
+        },
+        {
+            nom: "Lavande aspic",
+            utilisation: "1 goutte diluée dans votre crème",
+            precautions: "Faire un test cutané préalable"
+        },
+        {
+            nom: "Géranium rosat",
+            utilisation: "1 goutte dans votre crème de soin",
+            precautions: "Peut être photosensibilisant"
+        }
+    ],
+
+    "eczéma": [
+        {
+            nom: "Lavande vraie",
+            utilisation: "2 gouttes diluées dans une huile végétale",
+            precautions: "Faire un test cutané préalable"
+        },
+        {
+            nom: "Camomille noble",
+            utilisation: "1 goutte diluée dans une crème neutre",
+            precautions: "Prix élevé, peut être remplacée"
+        },
+        {
+            nom: "Géranium rosat",
+            utilisation: "1 goutte diluée dans votre crème",
+            precautions: "Toujours diluer avant application"
+        }
+    ],
+
+    "jambes lourdes": [
+        {
+            nom: "Cyprès",
+            utilisation: "3-4 gouttes diluées en massage des jambes de bas en haut",
+            precautions: "Déconseillé en cas de mastose"
+        },
+        {
+            nom: "Hélichryse italienne",
+            utilisation: "2 gouttes diluées en massage",
+            precautions: "Prix élevé, peut être remplacée par le Cyprès"
+        },
+        {
+            nom: "Citron",
+            utilisation: "2 gouttes diluées en massage",
+            precautions: "Photosensibilisant, éviter l'exposition solaire"
+        }
+    ],
+
+    "fatigue": [
+        {
+            nom: "Menthe poivrée",
+            utilisation: "1 goutte à inhaler dans la journée",
+            precautions: "Ne pas utiliser le soir"
+        },
+        {
+            nom: "Romarin à verbénone",
+            utilisation: "1 goutte dans du miel le matin",
+            precautions: "Éviter le soir car stimulant"
+        },
+        {
+            nom: "Citron",
+            utilisation: "1 goutte dans du miel le matin",
+            precautions: "Photosensibilisant"
+        }
+    ]
 };
 
 // Synergies recommandées
@@ -338,6 +625,7 @@ const synergies = {
         durée: "Cure de 7 à 21 jours",
         precautions: "Éviter chez la femme enceinte et l'enfant de moins de 7 ans"
     },
+
     "Anti-stress intense": {
         composition: [
             "3 gouttes de Lavande vraie",
@@ -347,8 +635,128 @@ const synergies = {
         utilisation: "En diffusion ou diluées sur le plexus solaire",
         durée: "Utiliser pendant les périodes de stress",
         precautions: "Peut provoquer une somnolence, éviter avant la conduite"
+    },
+
+    "Sommeil réparateur": {
+        composition: [
+            "3 gouttes de Lavande vraie",
+            "2 gouttes de Marjolaine à coquilles",
+            "2 gouttes de Mandarine rouge"
+        ],
+        utilisation: "En diffusion 30 minutes avant le coucher",
+        durée: "Selon les besoins",
+        precautions: "Ne pas utiliser si vous devez rester vigilant"
+    },
+
+    "Douleurs articulaires fortes": {
+        composition: [
+            "2 gouttes de Gaulthérie",
+            "2 gouttes d'Eucalyptus citronné",
+            "1 goutte de Poivre noir"
+        ],
+        utilisation: "Diluer dans une huile végétale pour massage local",
+        durée: "5-7 jours puis faire une pause",
+        precautions: "Ne pas utiliser si allergie aux salicylés"
+    },
+
+    "Respiratoire puissant": {
+        composition: [
+            "2 gouttes de Ravintsara",
+            "2 gouttes d'Eucalyptus radié",
+            "1 goutte de Tea tree"
+        ],
+        utilisation: "En diffusion ou dilué sur le thorax",
+        durée: "5-7 jours maximum",
+        precautions: "Éviter chez les asthmatiques"
+    },
+
+    "Digestion facile": {
+        composition: [
+            "1 goutte de Basilic tropical",
+            "1 goutte de Menthe poivrée",
+            "1 goutte de Citron"
+        ],
+        utilisation: "Dans une cuillère de miel après les repas",
+        durée: "Utilisations ponctuelles",
+        precautions: "Ne pas utiliser chez la femme enceinte"
+    },
+
+    "Circulation légère": {
+        composition: [
+            "3 gouttes de Cyprès",
+            "2 gouttes de Citron",
+            "1 goutte d'Hélichryse"
+        ],
+        utilisation: "Diluer dans une huile végétale et masser les jambes de bas en haut",
+        durée: "21 jours par mois",
+        precautions: "Application le soir, photosensibilisant"
+    },
+
+    "Peau nette": {
+        composition: [
+            "1 goutte de Tea tree",
+            "1 goutte de Lavande vraie",
+            "1 goutte de Géranium rosat"
+        ],
+        utilisation: "Diluer dans une crème neutre pour application locale",
+        durée: "3 semaines",
+        precautions: "Faire un test cutané préalable"
+    },
+
+    "Concentration optimale": {
+        composition: [
+            "2 gouttes de Menthe poivrée",
+            "2 gouttes de Citron",
+            "1 goutte de Basilic tropical"
+        ],
+        utilisation: "En diffusion ou à inhaler sur un mouchoir",
+        durée: "Pendant les périodes de travail intense",
+        precautions: "Éviter le soir, effet stimulant"
+    },
+
+    "Détente musculaire": {
+        composition: [
+            "3 gouttes de Lavande vraie",
+            "2 gouttes de Gaulthérie",
+            "1 goutte de Romarin à camphre"
+        ],
+        utilisation: "Diluer dans une huile végétale pour massage",
+        durée: "Après l'effort ou en cas de tension",
+        precautions: "Éviter en cas de traitement anticoagulant"
+    },
+
+    "Récupération sportive": {
+        composition: [
+            "2 gouttes de Gaulthérie",
+            "2 gouttes d'Hélichryse",
+            "1 goutte de Menthe poivrée"
+        ],
+        utilisation: "Diluer dans une huile végétale pour massage",
+        durée: "Après l'effort intense",
+        precautions: "Ne pas appliquer avant l'effort"
+    },
+
+    "Protection hivernale": {
+        composition: [
+            "2 gouttes de Ravintsara",
+            "1 goutte de Tea tree",
+            "1 goutte de Thym à thujanol"
+        ],
+        utilisation: "Dans du miel ou en diffusion",
+        durée: "En prévention 5 jours par mois",
+        precautions: "Ne pas dépasser les doses indiquées"
+    },
+
+    "Relaxation profonde": {
+        composition: [
+            "3 gouttes de Lavande vraie",
+            "2 gouttes de Camomille romaine",
+            "2 gouttes de Petit grain bigarade"
+        ],
+        utilisation: "En diffusion ou massage dilué sur le plexus",
+        durée: "Selon les besoins",
+        precautions: "Peut induire une somnolence"
     }
-    // Ajoutez d'autres synergies selon vos besoins
 };
 
 // Fonctionnalités de l'interface
